@@ -22,7 +22,8 @@ const Home: NextPage = () => {
 
 	return (
 		<div className="text-primary">
-			<div className="my-noise"></div>
+			<div className="crt"></div>
+			<div className="scanline"></div>
 			{/* home */}
 			<div className="p-12 h-[100vh] relative overflow-x-hidden">
 				<div className="flex items-center justify-between">
@@ -49,32 +50,28 @@ const Home: NextPage = () => {
 								variants={{
 									hover: {
 										width: "100vw",
-										transition: {
-											duration: 5,
-											ease: "easeOut",
-										},
+										transition: { duration: 5, ease: "easeOut" },
 									},
 								}}></motion.div>
 						</div>
 						<div className="text-2xl">~!</div>
 					</motion.div>
 					<div className="text-8xl tracking-tighter -ml-1 relative">
-						<span className="font-medium">Ronna</span> concerns herself with matters of
-						<br />
-						<div className="tracking-[-0.4rem] font-display italic text-9xl leading-[0.75] my-hover-underline w-[14ch]">
+						<span className="font-medium">Ronna</span> is currently involved with matters of{" "}
+						<span className="tracking-[-0.4rem] font-display italic text-9xl leading-[0.75] my-hover-underline">
 							software development.
-						</div>
+						</span>
 						{/* floater :: anchored to heading texts */}
 						<div className="absolute left-0 top-1/2 -translate-x-1/3 -translate-y-1/2 pointer-events-none">
-							<img src="images/slogan-wheel-hollow.svg" className="w-[1280px] opacity-5 my-rotate-slowly" />
+							<img src="/images/slogan-wheel-hollow.svg" className="w-[1280px] opacity-[0.015] my-rotate-slowly" />
 						</div>
 					</div>
 				</div>
-				{/* big ass floater :: anchored to viewport */}
+				{/* big ass floater, anchored to viewport */}
 				<div className="absolute right-0 bottom-0 translate-x-[35%] translate-y-[35%] pointer-events-none">
-					<img src="images/language-wheel-hollow.svg" className="w-[976px] opacity-5 my-rotate-slowly" />
+					<img src="/images/language-wheel-hollow.svg" className="w-[976px] opacity-[0.015] my-rotate-slowly" />
 				</div>
-				{/* floater :: anchored to viewport*/}
+				{/* floater, anchored to viewport*/}
 				<div className="absolute bottom-8 left-1/2">
 					<div className="h-20 w-[1px] bg-primary-50"></div>
 					<div className="h-16 w-[1px] bg-primary-50 mt-2"></div>
@@ -83,7 +80,7 @@ const Home: NextPage = () => {
 						<div className="h-6 w-[1px] bg-primary-50 rotate-45 -mt-4"></div>
 					</div>
 				</div>
-				{/* social icons floater :: anchored to viewport */}
+				{/* social icon floater, anchored to viewport */}
 				<div className="absolute bottom-0 left-0 space-y-6 m-12">
 					<div>
 						<a rel="noreferrer noopener" href="https://github.com/ronnaf" target="_blank">
