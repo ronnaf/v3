@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import { motion } from "framer-motion";
-import { NavItem } from "../components/nav-item";
 import { FiGithub, FiLinkedin, FiTwitter } from "react-icons/fi";
 import { useRef } from "react";
 
@@ -28,16 +27,16 @@ const Home: NextPage = () => {
 			<div className="p-12 h-[100vh] relative overflow-x-hidden">
 				<div className="flex items-center justify-between">
 					<div className="w-12 h-12 rounded-2xl border-4 rotate-45"></div>
-					<div className="flex">
-						<NavItem isActive={true} onClick={() => smoothlyScrollTo("home")}>
-							Home
-						</NavItem>
-						<NavItem isActive={false} onClick={() => smoothlyScrollTo("portfolio")}>
-							Portfolio
-						</NavItem>
-						<NavItem isActive={false} onClick={() => smoothlyScrollTo("whoami")}>
-							$whoami
-						</NavItem>
+					<div className="flex space-x-2">
+						{["~", "cd projects", "whoami"].map((item) => (
+							<div
+								key={item}
+								className="flex space-x-1 items-center group py-2 px-4 cursor-pointer">
+								<div className="group-hover:block hidden">$</div>
+								<div>{item}</div>
+								<div className="group-hover:block hidden w-2 h-4 bg-white my-cursor-blink" />
+							</div>
+						))}
 					</div>
 				</div>
 				<div className="container mx-auto h-full flex flex-col justify-center -mt-[8%] space-y-6">
