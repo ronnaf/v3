@@ -1,26 +1,155 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: "Tobias";
+	src: url("/fonts/tobias-light.ttf") format("truetype"), url("/fonts/tobias-light.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Roobert";
+	font-weight: 400;
+	src: url("/fonts/roobert-regular.ttf") format("truetype"), url("/fonts/roobert-regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Roobert";
+	font-weight: 500;
+	src: url("/fonts/roobert-medium.ttf") format("truetype"), url("/fonts/roobert-medium.woff2") format("woff2");
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	margin: 0;
+	background: #171924;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* width */
+::-webkit-scrollbar {
+	width: 0.25rem;
 }
 
-* {
-  box-sizing: border-box;
+/* Track */
+::-webkit-scrollbar-track {
+	border-radius: 4px;
+	background: theme(colors.primary.500 / 10%);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+/* Handle */
+::-webkit-scrollbar-thumb {
+	border-radius: 4px;
+	background: theme(colors.primary.500 / 35%);
+}
+
+.my-noise {
+	height: 100vh;
+	pointer-events: none;
+	position: fixed;
+	left: 0%;
+	right: 0%;
+	bottom: 0%;
+	z-index: 100;
+	opacity: 0.5;
+	mix-blend-mode: difference;
+}
+
+.my-noise::before {
+	content: "";
+	z-index: 999;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("/images/noise-web.webp");
+	animation: 90ms infinite my-noise;
+}
+
+@-webkit-keyframes my-noise {
+	0%,
+	100% {
+		background-position: 0 0;
+	}
+	10% {
+		background-position: -5% -10%;
+	}
+	20% {
+		background-position: -15% 5%;
+	}
+	30% {
+		background-position: 7% -25%;
+	}
+	40% {
+		background-position: 20% 25%;
+	}
+	50% {
+		background-position: -25% 10%;
+	}
+	60% {
+		background-position: 15% 5%;
+	}
+	70% {
+		background-position: 0 15%;
+	}
+	80% {
+		background-position: 25% 35%;
+	}
+	90% {
+		background-position: -10% 10%;
+	}
+}
+@keyframes my-noise {
+	0%,
+	100% {
+		background-position: 0 0;
+	}
+	10% {
+		background-position: -5% -10%;
+	}
+	20% {
+		background-position: -15% 5%;
+	}
+	30% {
+		background-position: 7% -25%;
+	}
+	40% {
+		background-position: 20% 25%;
+	}
+	50% {
+		background-position: -25% 10%;
+	}
+	60% {
+		background-position: 15% 5%;
+	}
+	70% {
+		background-position: 0 15%;
+	}
+	80% {
+		background-position: 25% 35%;
+	}
+	90% {
+		background-position: -10% 10%;
+	}
+}
+
+.my-hover-underline {
+	background: linear-gradient(currentColor 0 0) var(--d, 201%) 100% /200% 3px no-repeat;
+	transition: 0.5s;
+}
+
+.my-hover-underline:hover {
+	--d: -101%;
+}
+
+.my-rotate-slowly {
+	animation: my-spin 60s linear infinite;
+}
+
+@keyframes my-spin {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
 }
