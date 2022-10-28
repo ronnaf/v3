@@ -5,6 +5,7 @@ import { Socials } from "../components/socials";
 import { Hero } from "../components/hero";
 import { SpinalArrow } from "../components/spinal-arrow";
 import { About } from "../components/about";
+import { Card } from "../components/card";
 
 const Home: NextPage = () => {
 	const homeRef = useRef<HTMLDivElement>(null);
@@ -32,7 +33,14 @@ const Home: NextPage = () => {
 					<SpinalArrow />
 				</div>
 				<About ref={aboutRef} />
-				<div ref={projectsRef} className="h-[100vh]" />
+				<div ref={projectsRef} className="min-h-[100vh] container mx-auto">
+					<div className="grid grid-cols-3 w-full gap-8 h-full py-56 ">
+						{[...new Array(12)].map((_, i) => (
+							<Card key={i} />
+						))}
+					</div>
+				</div>
+				<div className="h-8" />
 			</div>
 			{/* big ass floater, anchored to viewport */}
 			<div className="absolute right-0 bottom-0 translate-x-[35%] translate-y-[35%] pointer-events-none">

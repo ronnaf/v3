@@ -285,5 +285,9 @@ body {
 }
 
 .my-main-heading {
-	@apply tracking-[-0.095em] font-display text-9xl leading-[0.75]
+	@apply tracking-[-0.095em] font-display leading-[0.75]
+}
+
+.my-vertical-text {
+	writing-mode: vertical-rl
 }

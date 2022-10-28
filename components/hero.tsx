@@ -24,7 +24,7 @@ export const Hero = (props: HeadingsProps) => {
 			</motion.div>
 			<div className="text-8xl tracking-tighter -ml-1 relative">
 				<span className="font-medium">Ronna</span> is currently involved with matters of{" "}
-				<span className="my-main-heading my-hover-underline italic">
+				<span className="my-main-heading text-9xl my-hover-underline italic">
 					software development.
 				</span>
 				{/* floater :: anchored to heading texts */}

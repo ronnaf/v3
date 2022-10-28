@@ -1,6 +1,5 @@
 import React, { forwardRef, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
-import {Canvas} from "@react-three/fiber";
 
 const PARAGRAPHS = [
 	{
@@ -38,13 +37,9 @@ export const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
 		<div ref={ref} className="h-[100vh] mx-auto container flex items-center">
 			<div className="grid grid-cols-3 w-full gap-16 h-full py-72">
 				<div className="col-span-1">
-					<Canvas>
-						<ambientLight />
-						<pointLight />
-					</Canvas>
 				</div>
 				<div className="col-span-2 space-y-8">
-					<div className="my-main-heading">I’m Ronna Firmo</div>
+					<div className="my-main-heading text-9xl">I’m Ronna Firmo</div>
 					<div className="leading-relaxed space-y-4 max-w-3xl">
 						<div className="flex items-center space-x-1">
 							<div>I build web and mobile apps for a living</div>
