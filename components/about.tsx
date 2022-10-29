@@ -38,7 +38,7 @@ export const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
 
 	return (
 		<div ref={ref} {...props} className={clsx("h-[100vh] mx-auto container flex items-center", props.className)}>
-			<div className="grid grid-cols-3 w-full gap-16 h-full py-72">
+			<div className="grid grid-cols-3 w-full gap-16 h-full pt-52 py-72">
 				<div className="col-span-1 flex items-center justify-center h-full">
 					<div className="aspect-square w-full">
 						<Canvas>
