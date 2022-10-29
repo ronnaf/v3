@@ -37,7 +37,7 @@ const Home: NextPage<Props> = (props) => {
 			<Header className="p-12 fixed w-full z-10" onNavigationItemPress={smoothlyScrollTo} />
 			<div className="h-full overflow-y-auto overflow-x-hidden -z-0">
 				<div ref={homeRef} className="relative h-[100vh]">
-					<Hero className="h-4/5" />
+					<Hero className="h-4/5 px-12" />
 					<SpinalArrow />
 				</div>
 				<About ref={aboutRef} />
