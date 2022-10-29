@@ -1,6 +1,7 @@
+import { Canvas } from "@react-three/fiber";
+import clsx from "clsx";
 import React, { forwardRef, useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
-import { Canvas } from "@react-three/fiber";
 import { Donut } from "./donut";
 
 const PARAGRAPHS = [
@@ -21,7 +22,7 @@ const PARAGRAPHS = [
 	},
 ];
 
-export interface AboutProps {}
+export interface AboutProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}
 
 export const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
 	const [index, setIndex] = useState(0);
@@ -36,7 +37,7 @@ export const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
 	}
 
 	return (
-		<div ref={ref} className="h-[100vh] mx-auto container flex items-center">
+		<div ref={ref} {...props} className={clsx("h-[100vh] mx-auto container flex items-center", props.className)}>
 			<div className="grid grid-cols-3 w-full gap-16 h-full py-72">
 				<div className="col-span-1 flex items-center justify-center h-full">
 					<div className="aspect-square w-full">

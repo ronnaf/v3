@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { OrbitControls } from "@react-three/drei";
 
 export interface DonutProps {}
 
@@ -15,10 +16,11 @@ export const Donut = (props: DonutProps) => {
 	return (
 		<>
 			<ambientLight intensity={0.1}  />
-			<pointLight position={[8, 8, 8]} />
+			<pointLight position={[10, 10, 8]} />
 			<mesh ref={mesh} position={[0, 0, 0]}>
-				<torusGeometry args={[1.75, 0.85, 16, 100]} />
-				<meshStandardMaterial color="orange" />
+				<torusGeometry args={[1.75, 0.85, 16, 30]} />
+				<meshPhongMaterial color="orange" />
+				<OrbitControls enableZoom={false} />
 			</mesh>
 		</>
 	);

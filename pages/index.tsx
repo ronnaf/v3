@@ -1,13 +1,21 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import { useRef } from "react";
-import { Header, NavigationItemKey } from "../components/header";
-import { Socials } from "../components/socials";
-import { Hero } from "../components/hero";
-import { SpinalArrow } from "../components/spinal-arrow";
 import { About } from "../components/about";
 import { Card } from "../components/card";
+import { Header, NavigationItemKey } from "../components/header";
+import { Hero } from "../components/hero";
+import { Socials } from "../components/socials";
+import { SpinalArrow } from "../components/spinal-arrow";
+import { api } from "../lib/api/api";
+import { LandingQueryResponse } from "../lib/api/queries/landing-query";
+import { request } from "../lib/datocms";
+import { Project } from "../lib/models/project";
 
-const Home: NextPage = () => {
+interface Props extends LandingQueryResponse {
+	projects: Project[]
+}
+
+const Home: NextPage<Props> = (props) => {
 	const homeRef = useRef<HTMLDivElement>(null);
 	const projectsRef = useRef<HTMLDivElement>(null);
 	const aboutRef = useRef<HTMLDivElement>(null);
@@ -33,10 +41,17 @@ const Home: NextPage = () => {
 					<SpinalArrow />
 				</div>
 				<About ref={aboutRef} />
-				<div ref={projectsRef} className="min-h-[100vh] container mx-auto">
-					<div className="grid grid-cols-3 w-full gap-8 h-full py-56 ">
-						{[...new Array(12)].map((_, i) => (
-							<Card key={i} />
+				<div ref={projectsRef} className="min-h-[100vh] container mx-auto px-24">
+					<div className="grid grid-cols-3 w-full gap-8 h-full py-56">
+						{props.projects.map((project, i) => (
+							<Card key={i}
+								title={project.title}
+								subtitle={project.subtitle}
+								summary={project.summary}
+								tags={project.tags}
+								type={project.projectType}
+								workplace={project.builtAt}
+							/>
 						))}
 					</div>
 				</div>
@@ -50,6 +65,20 @@ const Home: NextPage = () => {
 			<Socials />
 		</div>
 	);
+};
+
+export const getStaticProps: GetStaticProps<Omit<Props, 'allProjects'>> = async () => {
+	const {  allProjects, ...rest}: LandingQueryResponse = await request({
+		query: api.LANDING_QUERY,
+	});
+
+	return {
+		props: {
+			...rest,
+			projects: allProjects
+		},
+		revalidate: 60, // seconds
+	};
 };
 
 export default Home;

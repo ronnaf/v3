@@ -288,6 +288,10 @@ body {
 	@apply tracking-[-0.095em] font-display leading-[0.75]
 }
 
+.my-h1-heading {
+	@apply tracking-[-0.05em] font-display leading-[0.75]
+}
+
 .my-vertical-text {
 	writing-mode: vertical-rl
 }
