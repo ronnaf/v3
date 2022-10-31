@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-export type NavigationItemKey = "home" | "projects" | "portfolio";
+export type NavigationItemKey = "home" | "projects" | "about";
 
 export interface HeaderProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	onNavigationItemPress: (key: NavigationItemKey) => void;
@@ -9,7 +9,7 @@ export interface HeaderProps extends React.DetailedHTMLProps<React.HTMLAttribute
 
 const NAVIGATION_ITEMS: { name: string; key: NavigationItemKey }[] = [
 	{ name: "~", key: "home" },
-	{ name: "whoami", key: "portfolio" },
+	{ name: "whoami", key: "about" },
 	{ name: "cd projects", key: "projects" },
 ];
 

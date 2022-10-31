@@ -25,7 +25,7 @@ const Home: NextPage<Props> = (props) => {
 		const library = {
 			home: homeRef,
 			projects: projectsRef,
-			portfolio: aboutRef,
+			about: aboutRef,
 		};
 		library[where].current?.scrollIntoView({
 			behavior: "smooth",
@@ -46,7 +46,7 @@ const Home: NextPage<Props> = (props) => {
 				<div className="h-full overflow-y-auto overflow-x-hidden -z-0">
 					<div ref={homeRef} className="relative h-[100vh]">
 						<Hero className="h-4/5 px-12" />
-						<SpinalArrow />
+						<SpinalArrow onClick={() => smoothlyScrollTo('about')} />
 					</div>
 					<About ref={aboutRef} />
 					<div ref={projectsRef} className="min-h-[100vh] container mx-auto px-24">
