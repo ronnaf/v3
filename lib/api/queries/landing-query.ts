@@ -39,6 +39,7 @@ export const LANDING_QUERY = gql`
       screenshots {
         url
       }
+      urls
     }
     _allProjectsMeta {
       count

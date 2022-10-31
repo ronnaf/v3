@@ -12,6 +12,7 @@ export interface Project {
   featured: boolean;
   projectType:  "mobile" | "cross-platform" | "web" | "desktop";
   screenshots: Screenshot[];
+  urls: string[]
 }
 
 interface Thumbnail {
