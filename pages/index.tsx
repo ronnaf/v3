@@ -61,6 +61,7 @@ const Home: NextPage<Props> = (props) => {
 									type={project.projectType}
 									workplace={project.builtAt}
 									urls={project.urls || []}
+									featured={project.featured}
 								/>
 							))}
 						</div>

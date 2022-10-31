@@ -18,6 +18,7 @@ export interface CardProps {
 	tags: string[];
 	workplace: string;
 	urls: string[];
+	featured: boolean;
 }
 
 export const Card = (props: CardProps) => {
@@ -59,6 +60,14 @@ export const Card = (props: CardProps) => {
 					BUILT AT {props.workplace}
 				</div>
 			)}
+			{!!props.featured && <div className="absolute -top-4 -right-4 rotate-[15deg] opacity-10">
+				<div className="relative w-48 h-48">
+					<img src="/images/starburst.svg" className="w-full h-full absolute" />
+					<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-bold mix-blend-exclusion text-xl leading-none text-center">
+						CERTIFIED GOODIE
+					</div>
+				</div>
+			</div>}
 		</div>
 	);
 };
