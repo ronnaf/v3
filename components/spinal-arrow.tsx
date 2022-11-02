@@ -12,7 +12,10 @@ export interface SpinalArrowProps {
 
 export const SpinalArrow = (props: SpinalArrowProps) => {
 	return (
-		<motion.div className="absolute bottom-8 left-1/2 cursor-pointer px-10" whileHover="hover" onClick={props.onClick}>
+		<motion.div
+			className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer px-10"
+			whileHover="hover"
+			onClick={props.onClick}>
 			<div className="h-20 w-[1px] bg-primary-50"></div>
 			<motion.div className="h-16 w-[1px] bg-primary-50 mt-2" variants={variants}></motion.div>
 			<div className="-mt-8">

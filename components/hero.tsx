@@ -8,7 +8,7 @@ export const Hero = (props: HeadingsProps) => {
 	return (
 		<div {...props} className={clsx("container mx-auto flex flex-col justify-center space-y-6", props.className)}>
 			<motion.div className="flex items-center space-x-1 cursor-pointer" whileHover="hover">
-				<div className="text-2xl">Hello</div>
+				<div className="text-lg lg:text-2xl">Hello</div>
 				<div className="flex items-center">
 					<div className="h-6 w-[2px] bg-primary/75"></div>
 					<motion.div
@@ -20,11 +20,11 @@ export const Hero = (props: HeadingsProps) => {
 							},
 						}}></motion.div>
 				</div>
-				<div className="text-2xl">~!</div>
+				<div className="text-lg lg:text-2xl">~!</div>
 			</motion.div>
-			<div className="text-8xl tracking-tighter -ml-1 relative">
+			<div className="text-3xl lg:text-8xl tracking-tighter -ml-1 relative">
 				<span className="font-medium">Ronna</span> is currently involved with matters of{" "}
-				<span className="my-main-heading text-9xl my-hover-underline italic">
+				<span className="my-main-heading text-4xl lg:text-9xl my-hover-underline italic">
 					software development.
 				</span>
 				{/* floater :: anchored to heading texts */}

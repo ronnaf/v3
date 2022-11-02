@@ -42,15 +42,15 @@ const Home: NextPage<Props> = (props) => {
 			</Head>
 			<div className="my-monitor text-primary overflow-hidden h-[100vh] relative crt">
 				<div className="scanline"></div>
-				<Header className="p-12 fixed w-full z-10" onNavigationItemPress={smoothlyScrollTo} />
+				<Header className="p-8 md:p-12 fixed w-full z-10" onNavigationItemPress={smoothlyScrollTo} />
 				<div className="h-full overflow-y-auto overflow-x-hidden -z-0">
 					<div ref={homeRef} className="relative h-[100vh]">
 						<Hero className="h-4/5 px-12" />
 						<SpinalArrow onClick={() => smoothlyScrollTo('about')} />
 					</div>
 					<About ref={aboutRef} />
-					<div ref={projectsRef} className="min-h-[100vh] container mx-auto px-24">
-						<div className="grid grid-cols-3 w-full gap-8 h-full py-56">
+					<div ref={projectsRef} className="min-h-[100vh] container mx-auto px-4 xl:px-24">
+						<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full gap-4 xl:gap-8 h-full py-56">
 							{props.projects.map((project, i) => (
 								<Card
 									key={i}

@@ -37,8 +37,8 @@ export const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
 	}
 
 	return (
-		<div ref={ref} {...props} className={clsx("h-[100vh] mx-auto container flex items-center", props.className)}>
-			<div className="grid grid-cols-3 w-full gap-16 h-full pt-52 py-72">
+		<div ref={ref} {...props} className={clsx("min-h-[100vh] mx-auto container flex items-center", props.className)}>
+			<div className="grid grid-cols-1 lg:grid-cols-3 w-full lg:gap-16 h-full lg:pt-52 lg:pb-72 mx-8 sm:mx-24 lg:mx-4">
 				<div className="col-span-1 flex items-center justify-center h-full">
 					<div className="aspect-square w-full">
 						<Canvas>
@@ -46,7 +46,7 @@ export const About = forwardRef<HTMLDivElement, AboutProps>((props, ref) => {
 						</Canvas>
 					</div>
 				</div>
-				<div className="col-span-2 space-x-16 flex items-center">
+				<div className="col-span-2 space-y-8 lg:space-y-0 lg:space-x-16 lg:flex items-center">
 					<div className="my-main-heading text-9xl">
 						I’m
 						<br />

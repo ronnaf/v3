@@ -5,7 +5,7 @@ export interface SocialsProps {}
 
 export const Socials = (props: SocialsProps) => {
 	return (
-		<div className="absolute bottom-0 left-0 space-y-6 m-12">
+		<div className="hidden xl:block absolute bottom-0 left-0 space-y-6 m-12">
 			<div>
 				<a rel="noreferrer noopener" href="https://github.com/ronnaf" target="_blank">
 					<FiGithub size={16} />
