@@ -8,17 +8,17 @@ const PARAGRAPHS = [
 	{
 		key: "me",
 		buttonText: "Read more",
-		text: 'I\'m a front-end-leaning software engineer, currently based in the "city of love", Iloilo City, Philippines. I love building beautiful products and find it quite fullfilling to see my work out there, being used by other people!',
+		text: "Based in the heart of Iloilo City, Philippines, I'm a software engineer with a strong inclination towards front-end development. There's nothing quite like the sense of accomplishment I feel when I see people engaging with and benefiting from the products I help build.",
 	},
 	{
 		key: "downtime",
 		buttonText: "Read too much info 😳",
-		text: "In my downtime, I try to stay up-to-date with the current advances in tech, catch up on some books, watch good tv, do some random woodworking project, fix things around the house, play with my dog, or go foraging in the forest behind our house.",
+		text: "In my free time, I like to keep tabs on the latest tech developments, dive into a good book, enjoy quality TV shows, tinker with woodworking projects, handle household repairs, spend time with my dog, or explore the forest behind our house foraging for treasures.",
 	},
 	{
 		key: "story",
 		buttonText: "See less 😬",
-		text: "I grew up in a small town, surrounded by chickens, rice fields and tall bamboo trees. We didn't have internet. A few days before college enrolment closes, I still haven't made up my mind on what I wanted to pursue. I went to town, sat down in an internet cafe, and looked for the coolest sounding degree I could find. Software Engineering. Even the acronym (SE) sounds cool!",
+		text: "I grew up in a tiny town, with chickens roaming freely, rice fields stretching out, and towering bamboo trees all around. Internet wasn't something we had. As college enrollment deadlines loomed, I found myself still undecided about my future path. So, I ventured into town, settled into an internet cafe, and began my search for something intriguing. That's when I stumbled upon Software Engineering. Even the abbreviation, SE, had a cool ring to it!",
 	},
 ];
 
